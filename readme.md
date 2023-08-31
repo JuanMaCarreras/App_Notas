@@ -21,3 +21,5 @@
 -Passport-local ----> Se utiliza para autenticar a los usuarios mediante credenciales locales, como un nombre de usuario y una contraseña almacenados en la base de datos de la aplicación.
 
 Dependencias de Desarrollo
+
+-Nodemon ----> Reinicia el sevidor automanticamente cuando detecta cambios
