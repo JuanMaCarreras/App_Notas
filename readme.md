@@ -8,7 +8,7 @@
 
 -Bcryptjs ----> Hashing de contraseñas y la encriptación de datos en aplicaciones web.
 
--Express-handlebars ---->
+-Express-handlebars ----> modelo de plantillas
 
 -Express-session ----> Middleware utilizado para gestionar sesiones de usuario ( Permite que una aplicación rastree el estado y la actividad del usuario durante su visita).
 

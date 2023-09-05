@@ -1,5 +1,0 @@
-# Ignorar node_modules y package.json
-node_modules/
-package.json
-package-lock.json
-.env
