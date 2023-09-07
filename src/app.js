@@ -1,7 +1,8 @@
 import express from 'express'
 import { create } from 'express-handlebars'
 import path from 'path'
-import router from './routes/routes'
+import routes from './routes/routes'
+import morgan from 'morgan'
 
 const app = express()
 
@@ -17,6 +18,11 @@ app.engine('.hbs', exphbs.engine)
 
 app.set('view engine', '.hbs')
 
-app.use(router)
+//Middlewares
+app.use(morgan('dev'))
+app.use(express.urlencoded({ extended: false }))
+
+//Rutas
+app.use(routes)
 
 export default app
