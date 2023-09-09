@@ -11,14 +11,12 @@ router.get('/about', (req, res) => {
     res.render('about')
 })
 
-router.post('/note/add', (req, res) => {
-    // const { name, description } = req.body
+router.post('/note/add', async (req, res) => {
+    const note = Note(req.body)
 
-    // const note = Note(req.body)
+    await note.save()
 
-    // console.log(note)
-
-    res.send('todo OK')
+    res.redirect('/')
 })
 
 export default router
