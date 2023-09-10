@@ -3,8 +3,10 @@ import Note from '../models/notes'
 
 const router = Router()
 
-router.get('/', (req, res) => {
-    res.render('index')
+router.get('/', async (req, res) => {
+    const note = await Note.find().lean()
+
+    res.render('index', { note: note })
 })
 
 router.get('/about', (req, res) => {
@@ -12,11 +14,15 @@ router.get('/about', (req, res) => {
 })
 
 router.post('/note/add', async (req, res) => {
-    const note = Note(req.body)
+    try {
+        const note = Note(req.body)
 
-    await note.save()
+        await note.save()
 
-    res.redirect('/')
+        res.redirect('/')
+    } catch (error) {
+        console.log(error)
+    }
 })
 
 export default router
